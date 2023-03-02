@@ -10,16 +10,10 @@
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 			crossorigin="anonymous"
 		/>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-			crossorigin="anonymous"
-		></script>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
 		/>
-		<script src="js/app.js"></script>
 		<title>Ejercicio 3</title>
 	</head>
 	<body>
@@ -29,17 +23,42 @@
 					<i class="bi bi-building"> </i>
 					Empresa
 				</h3>
-				<input type="number" id="id" class="form-control my-3" />
-				<input type="text" id="nombre" class="form-control my-3" />
-				<input type="text" id="nit" class="form-control my-3" />
-				<input type="text" id="fundacion" class="form-control my-3" />
-				<input type="text" id="direccion" class="form-control my-3" />
+				<label class="form-label mt-3">ID:</label>
+				<input type="number" id="id" class="form-control" />
+				<label class="form-label mt-3">Nombre:</label>
+				<input type="text" id="nombre" class="form-control" />
+				<label class="form-label mt-3">NIT:</label>
+				<input type="text" id="nit" class="form-control" />
+				<label class="form-label mt-3">Fecha de Fundación:</label>
+				<input type="text" id="fecha" class="form-control" />
+				<label class="form-label mt-3">Dirección:</label>
+				<input type="text" id="direccion" class="form-control mb-3" />
 				<button id="boton" type="submit" class="btn btn-primary">Guardar</button>
 			</form>
 
-			<div id="empresas"></div>
+			<div id="empresas" class="border border-opacity-10 rounded mt-3 row">
+				<div class="card m-2" style="width: 18rem">
+					<div class="card-body">
+						<h6 class="card-subtitle mb-2 text-muted">${element.id}</h6>
+						<h5 class="card-title">${element.nombre}</h5>
+						<h6 class="card-subtitle mb-2 text-muted">${element.nit}</h6>
+						<h6 class="card-subtitle mb-2 text-muted">${element.fecha}</h6>
+						<h6 class="card-subtitle mb-2 text-muted">${element.direccion}</h6>
+						<span class="float-end">
+							<i class="bi bi-pencil-square"></i>
+							<i class="bi bi-trash2"></i>
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

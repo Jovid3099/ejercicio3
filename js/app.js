@@ -19,29 +19,31 @@ const CrearEmpresa = (id, nombre, nit, fecha, direccion) => {
 
 const GuardarDB = () => {
 	localStorage.setItem('empresas', JSON.stringify(arrayEmpresas));
+
+	LeerDB();
 };
 
 const LeerDB = () => {
 	empresaUI.innerHTML = '';
 	arrayEmpresas = JSON.parse(localStorage.getItem('empresas'));
-	if ((arrayEmpresas = null)) {
+	if ((arrayEmpresas === null)) {
 		arrayEmpresas = [];
 	} else {
-		arrayEmpresas.array.forEach((element) => {
+		arrayEmpresas.forEach(element => {
 			empresaUI.innerHTML += `
-            <div class="card mt-4" style="width: 18rem">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">${element.id}</h6>
-                <h5 class="card-title">${element.nombre}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${element.nit}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">${element.fecha}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">${element.direccion}</h6>
-                <span class="float-end">
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash2"></i>
-                </span>
-            </div>
-        </div>`;
+				<div class="card m-2" style="width: 18rem">
+				<div class="card-body">
+					<h6 class="card-subtitle mb-2 text-muted">${element.id}</h6>
+					<h5 class="card-title">${element.nombre}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">${element.nit}</h6>
+					<h6 class="card-subtitle mb-2 text-muted">${element.fecha}</h6>
+					<h6 class="card-subtitle mb-2 text-muted">${element.direccion}</h6>
+					<span class="float-end">
+						<i class="bi bi-pencil-square"></i>
+						<i class="bi bi-trash2"></i>
+					</span>
+				</div>
+			</div>`;
 		});
 	}
 };
